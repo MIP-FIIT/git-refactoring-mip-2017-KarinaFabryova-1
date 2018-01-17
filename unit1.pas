@@ -23,7 +23,7 @@ type
   end;
 
 type ziak = record
-       meno: string;
+       name: string;
        znamky: array[1..7] of integer;
        priemer: real;
        prospech: string;
@@ -55,11 +55,11 @@ begin
         begin
           pz:=pz+1;
           for i:=1 to 7 do Read(t,ziaci[pz].znamky[i]);
-          ReadLn(t,ziaci[pz].meno);
+          ReadLn(t,ziaci[pz].name);
         end;
   for i:=1 to pz do
         begin
-          riadok:=ziaci[i].meno;
+          riadok:=ziaci[i].name;
           sucet:=0;
           max:=ziaci[i].znamky[2];
           for j:=2 to 7 do
@@ -86,7 +86,7 @@ begin
   Memo1.Clear;
   for i:=1 to pz do if ziaci[i].prospech='PV' then
         begin
-          riadok:=ziaci[i].meno;
+          riadok:=ziaci[i].name;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
           riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
@@ -94,7 +94,7 @@ begin
         end;
   for i:=1 to pz do if ziaci[i].prospech='PVD' then
         begin
-          riadok:=ziaci[i].meno;
+          riadok:=ziaci[i].name;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
           riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
@@ -102,7 +102,7 @@ begin
         end;
   for i:=1 to pz do if ziaci[i].prospech='P' then
         begin
-          riadok:=ziaci[i].meno;
+          riadok:=ziaci[i].name;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
           riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
@@ -110,7 +110,7 @@ begin
         end;
   for i:=1 to pz do if ziaci[i].prospech='N' then
         begin
-          riadok:=ziaci[i].meno;
+          riadok:=ziaci[i].name;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
           riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
