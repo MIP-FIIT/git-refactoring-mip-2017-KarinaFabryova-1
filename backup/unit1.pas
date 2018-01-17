@@ -1,7 +1,3 @@
-//Karina Fabryova
-//92 013
-//Lazarus -> Git + Refaktoring
-
 unit Unit1;
 
 {$mode objfpc}{$H+}
@@ -33,10 +29,9 @@ type ziak = record
        prospech: string;
        end;
 
-//deklarácia
 var
   Form1: TForm1;
-  ziaci: array[1..100] of ziak;    //max 100 -> vymyslená hodnota
+  ziaci: array[1..100] of ziak;
   pocet_znamok: integer;
   i: integer;
   j: integer;
@@ -54,13 +49,9 @@ implementation
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   AssignFile(t,'znamky.txt');
-  //priradí meni "znamky" vonkajšiemu súboru premennej t
   Reset(t);
-  //príprava už existujúceho súboru t na čítanie (číta sa vždy od 1. položky)
   pocet_znamok:=0;
   while not eof(t) do
-        //pokiaľ nie sme na konci súboru, urob...
-        //eof - end of file
         begin
           pocet_znamok:=pocet_znamok+1;
           for i:=1 to 7 do Read(t,ziaci[pocet_znamok].znamky[i]);
@@ -72,7 +63,6 @@ begin
           sucet:=0;
           max:=ziaci[i].znamky[2];
           for j:=2 to 7 do
-          //do priemeru nepočítame známku zo správania - preto od 2 po 7
                 begin
                   sucet:=sucet+ziaci[i].znamky[j];
                   if ziaci[i].znamky[j]>max then max:=ziaci[i].znamky[j];
@@ -92,11 +82,8 @@ begin
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
-//UpravENí program tak, aby sa najprv vypísali všetci vyznamenaní študenti,
-//potom tí, čo prospeli veľmi dobre atď.
 begin
   Memo1.Clear;
-  //PROSPEL S VYZNAMENANÍM
   for i:=1 to pocet_znamok do if ziaci[i].prospech='PV' then
         begin
           riadok:=ziaci[i].meno;
@@ -105,7 +92,6 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  //PROSPEL VEĽMI DOBRE
   for i:=1 to pocet_znamok do if ziaci[i].prospech='PVD' then
         begin
           riadok:=ziaci[i].meno;
@@ -114,7 +100,6 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  //PROSPEL
   for i:=1 to pocet_znamok do if ziaci[i].prospech='P' then
         begin
           riadok:=ziaci[i].meno;
@@ -123,7 +108,6 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  //NEPROSPEL
   for i:=1 to pocet_znamok do if ziaci[i].prospech='N' then
         begin
           riadok:=ziaci[i].meno;

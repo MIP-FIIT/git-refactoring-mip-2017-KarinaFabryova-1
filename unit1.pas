@@ -32,7 +32,7 @@ type ziak = record
 var
   Form1: TForm1;
   ziaci: array[1..100] of ziak;
-  pocet_znamok: integer;
+  pz: integer;
   i: integer;
   j: integer;
   sucet: integer;
@@ -50,14 +50,14 @@ procedure TForm1.FormCreate(Sender: TObject);
 begin
   AssignFile(t,'znamky.txt');
   Reset(t);
-  pocet_znamok:=0;
+  pz:=0;
   while not eof(t) do
         begin
-          pocet_znamok:=pocet_znamok+1;
-          for i:=1 to 7 do Read(t,ziaci[pocet_znamok].znamky[i]);
-          ReadLn(t,ziaci[pocet_znamok].meno);
+          pz:=pz+1;
+          for i:=1 to 7 do Read(t,ziaci[pz].znamky[i]);
+          ReadLn(t,ziaci[pz].meno);
         end;
-  for i:=1 to pocet_znamok do
+  for i:=1 to pz do
         begin
           riadok:=ziaci[i].meno;
           sucet:=0;
@@ -84,7 +84,7 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
 begin
   Memo1.Clear;
-  for i:=1 to pocet_znamok do if ziaci[i].prospech='PV' then
+  for i:=1 to pz do if ziaci[i].prospech='PV' then
         begin
           riadok:=ziaci[i].meno;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
@@ -92,7 +92,7 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  for i:=1 to pocet_znamok do if ziaci[i].prospech='PVD' then
+  for i:=1 to pz do if ziaci[i].prospech='PVD' then
         begin
           riadok:=ziaci[i].meno;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
@@ -100,7 +100,7 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  for i:=1 to pocet_znamok do if ziaci[i].prospech='P' then
+  for i:=1 to pz do if ziaci[i].prospech='P' then
         begin
           riadok:=ziaci[i].meno;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
@@ -108,7 +108,7 @@ begin
           riadok:=riadok+' prospech: '+ziaci[i].prospech;
           Memo1.Lines.Add(riadok);
         end;
-  for i:=1 to pocet_znamok do if ziaci[i].prospech='N' then
+  for i:=1 to pz do if ziaci[i].prospech='N' then
         begin
           riadok:=ziaci[i].meno;
           for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
