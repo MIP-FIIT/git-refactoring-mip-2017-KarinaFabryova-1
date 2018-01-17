@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <Compiler Value="C:\Lazarus\fpc\3.0.4\bin\x86_64-win64\fpc.exe" Date="1266910071"/>
-  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-FiC:\Users\JA\Desktop\Znamky 5 – kópia\lib\x86_64-win64&quot; -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 &quot;-FuC:\Users\JA\Desktop\Znamky 5 – kópia\&quot; &quot;-FUC:\Users\JA\Desktop\Znamky 5 – kópia\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 project1.lpr"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -WG -l -vewnhibq &quot;-FiC:\Users\JA\Desktop\Znamky 7 – kópia\lib\x86_64-win64&quot; -FuC:\lazarus\lcl\units\x86_64-win64\win32 -FuC:\lazarus\lcl\units\x86_64-win64 -FuC:\lazarus\components\lazutils\lib\x86_64-win64 -FuC:\lazarus\packager\units\x86_64-win64 &quot;-FuC:\Users\JA\Desktop\Znamky 7 – kópia\&quot; &quot;-FUC:\Users\JA\Desktop\Znamky 7 – kópia\lib\x86_64-win64\&quot; -dLCL -dLCLwin32 project1.lpr"/>
 </CONFIG>

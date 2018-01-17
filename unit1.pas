@@ -31,7 +31,7 @@ type z = record
 
 var
   Form1: TForm1;
-  ziaci: array[1..100] of z;
+  ziaci: array[1..35] of z;
   pz, i, j, s, m: integer;
   t: text;
   r: string;
