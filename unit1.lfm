@@ -1,0 +1,29 @@
+object Form1: TForm1
+  Left = 44
+  Height = 338
+  Top = 144
+  Width = 487
+  Caption = 'Zoznam - známky'
+  ClientHeight = 338
+  ClientWidth = 487
+  OnCreate = FormCreate
+  LCLVersion = '1.8.0.6'
+  object Memo1: TMemo
+    Left = 8
+    Height = 280
+    Top = 8
+    Width = 472
+    HelpType = htKeyword
+    ScrollBars = ssAutoBoth
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 8
+    Height = 25
+    Top = 296
+    Width = 472
+    Caption = 'Zoraď podľa prospechu'
+    OnClick = Button1Click
+    TabOrder = 1
+  end
+end
