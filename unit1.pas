@@ -35,7 +35,7 @@ var
   pz: integer;
   i: integer;
   j: integer;
-  sucet: integer;
+  s: integer;
   max: integer;
   t: text;
   riadok: string;
@@ -60,15 +60,15 @@ begin
   for i:=1 to pz do
         begin
           riadok:=ziaci[i].name;
-          sucet:=0;
+          s:=0;
           max:=ziaci[i].znamky[2];
           for j:=2 to 7 do
                 begin
-                  sucet:=sucet+ziaci[i].znamky[j];
+                  s:=s+ziaci[i].znamky[j];
                   if ziaci[i].znamky[j]>max then max:=ziaci[i].znamky[j];
                   riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
                 end;
-          ziaci[i].priemer:=sucet/6;
+          ziaci[i].priemer:=s/6;
           riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
           if (ziaci[i].znamky[1]=1) and (ziaci[i].priemer<=1.5) and (max<3)
              then ziaci[i].prospech:='PV'
