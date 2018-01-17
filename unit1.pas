@@ -22,7 +22,7 @@ type
 
   end;
 
-type ziak = record
+type z = record
        name: string;
        znamky: array[1..7] of integer;
        priemer: real;
@@ -31,12 +31,8 @@ type ziak = record
 
 var
   Form1: TForm1;
-  ziaci: array[1..100] of ziak;
-  pz: integer;
-  i: integer;
-  j: integer;
-  s: integer;
-  m: integer;
+  ziaci: array[1..100] of z;
+  pz, i, j, s, m: integer;
   t: text;
   r: string;
 
