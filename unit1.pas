@@ -38,7 +38,7 @@ var
   s: integer;
   m: integer;
   t: text;
-  riadok: string;
+  r: string;
 
 implementation
 
@@ -59,25 +59,25 @@ begin
         end;
   for i:=1 to pz do
         begin
-          riadok:=ziaci[i].name;
+          r:=ziaci[i].name;
           s:=0;
           m:=ziaci[i].znamky[2];
           for j:=2 to 7 do
                 begin
                   s:=s+ziaci[i].znamky[j];
                   if ziaci[i].znamky[j]>m then m:=ziaci[i].znamky[j];
-                  riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
+                  r:=r+' '+IntToStr(ziaci[i].znamky[j]);
                 end;
           ziaci[i].priemer:=s/6;
-          riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
+          r:=r+' priemer: '+FloatToStr(ziaci[i].priemer);
           if (ziaci[i].znamky[1]=1) and (ziaci[i].priemer<=1.5) and (m<3)
              then ziaci[i].prospech:='PV'
              else if (ziaci[i].znamky[1]=1) and (ziaci[i].priemer<=2) and (m<4)
                 then ziaci[i].prospech:='PVD'
                 else if m<5 then ziaci[i].prospech:='P'
                               else ziaci[i].prospech:='N';
-          riadok:=riadok+' prospech: '+ziaci[i].prospech;
-          Memo1.Lines.Add(riadok);
+          r:=r+' prospech: '+ziaci[i].prospech;
+          Memo1.Lines.Add(r);
         end;
 end;
 
@@ -86,35 +86,35 @@ begin
   Memo1.Clear;
   for i:=1 to pz do if ziaci[i].prospech='PV' then
         begin
-          riadok:=ziaci[i].name;
-          for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
-          riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
-          riadok:=riadok+' prospech: '+ziaci[i].prospech;
-          Memo1.Lines.Add(riadok);
+          r:=ziaci[i].name;
+          for j:=2 to 7 do r:=r+' '+IntToStr(ziaci[i].znamky[j]);
+          r:=r+' priemer: '+FloatToStr(ziaci[i].priemer);
+          r:=r+' prospech: '+ziaci[i].prospech;
+          Memo1.Lines.Add(r);
         end;
   for i:=1 to pz do if ziaci[i].prospech='PVD' then
         begin
-          riadok:=ziaci[i].name;
-          for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
-          riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
-          riadok:=riadok+' prospech: '+ziaci[i].prospech;
-          Memo1.Lines.Add(riadok);
+          r:=ziaci[i].name;
+          for j:=2 to 7 do r:=r+' '+IntToStr(ziaci[i].znamky[j]);
+          r:=r+' priemer: '+FloatToStr(ziaci[i].priemer);
+          r:=r+' prospech: '+ziaci[i].prospech;
+          Memo1.Lines.Add(r);
         end;
   for i:=1 to pz do if ziaci[i].prospech='P' then
         begin
-          riadok:=ziaci[i].name;
-          for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
-          riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
-          riadok:=riadok+' prospech: '+ziaci[i].prospech;
-          Memo1.Lines.Add(riadok);
+          r:=ziaci[i].name;
+          for j:=2 to 7 do r:=r+' '+IntToStr(ziaci[i].znamky[j]);
+          r:=r+' priemer: '+FloatToStr(ziaci[i].priemer);
+          r:=r+' prospech: '+ziaci[i].prospech;
+          Memo1.Lines.Add(r);
         end;
   for i:=1 to pz do if ziaci[i].prospech='N' then
         begin
-          riadok:=ziaci[i].name;
-          for j:=2 to 7 do riadok:=riadok+' '+IntToStr(ziaci[i].znamky[j]);
-          riadok:=riadok+' priemer: '+FloatToStr(ziaci[i].priemer);
-          riadok:=riadok+' prospech: '+ziaci[i].prospech;
-          Memo1.Lines.Add(riadok);
+          r:=ziaci[i].name;
+          for j:=2 to 7 do r:=r+' '+IntToStr(ziaci[i].znamky[j]);
+          r:=r+' priemer: '+FloatToStr(ziaci[i].priemer);
+          r:=r+' prospech: '+ziaci[i].prospech;
+          Memo1.Lines.Add(r);
         end;
 end;
 
